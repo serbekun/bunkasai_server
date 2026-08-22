@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.serbekun.bunkasai.BuildInfo;
 import com.serbekun.bunkasai.http.handles.StaticRoutes;
 import com.serbekun.bunkasai.http.handles.V0Health;
+import com.serbekun.bunkasai.http.handles.V0Index;
 
 import io.javalin.Javalin;
 
@@ -39,6 +40,7 @@ public final class Main {
          */
         List<HttpHandler> handlers = List.of(
             new V0Health(),
+            new V0Index(resourcesService),
             new StaticRoutes(resourcesService)
         );
 
